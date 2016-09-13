@@ -43,5 +43,10 @@ angular.module('main', [
             controller: 'DebugCtrl as ctrl'
           }
         }
-      });
+      })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'main/templates/login.html',
+      controller: 'LoginCtrl as ctrl'
+    });
 });

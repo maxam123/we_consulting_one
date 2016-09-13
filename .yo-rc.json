@@ -1,0 +1,14 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "We Consulting One",
+      "appId": "com.weconsulting.one",
+      "ionicCss": false,
+      "bowerPackages": [],
+      "platforms": [],
+      "plugins": [],
+      "appModule": "weConsultingOne",
+      "ecosystems": []
+    }
+  }
+}

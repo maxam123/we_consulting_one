@@ -1,4 +1,12 @@
-.col{
-  border: 1px solid black;
-  text-align: center;
+#loginForm{
+  margin-top:80%;
+  .button-light{
+    float:right;
+  }
+}
+#login {
+  background:url('../assets/images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }

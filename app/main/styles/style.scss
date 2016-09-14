@@ -1,0 +1,56 @@
+.recent-mail-container {
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 68px 20px 36px 20px;
+  background: #c43b00;
+  background: -moz-linear-gradient(45deg, #c43b00 0%, #c43b00 50%, #de4300 50%, #de4300 100%);
+  background: -webkit-linear-gradient(45deg, #c43b00 0%,#c43b00 50%,#de4300 50%,#de4300 100%);
+  background: linear-gradient(45deg, #c43b00 0%,#c43b00 50%,#de4300 50%,#de4300 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43b00', endColorstr='#de4300',GradientType=1 );
+
+  a {
+    margin: 10px;
+    padding: 0px 10px 0px 0px;
+    max-width: 420px;
+    background-color: white;
+    border-radius: 0px;
+
+    img {
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .email-content-preview {
+      min-width:280px;
+      max-width:320px;
+      white-space: normal;
+      word-wrap: break-word;
+      line-height: 20px;
+      text-align: left;
+      padding: 10px 0px 10px 0px;
+      margin: 0px;
+
+      .name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left:110px;
+      }
+
+    }
+
+  }
+
+}
+
+.home-email-alert {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+}

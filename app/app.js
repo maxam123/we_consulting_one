@@ -1,5 +1,6 @@
 'use strict';
 angular.module('weConsultingOne', [
   // load your modules here
-  'main', // starting with the main module
+  'main',   // starting with the main module
+  'slickCarousel',
 ]);

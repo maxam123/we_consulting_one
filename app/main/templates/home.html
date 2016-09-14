@@ -1,0 +1,19 @@
+<ion-view view-title="Home">
+  <ion-content>
+
+    <div class="home-email-alert"><i class="icon ion-android-notifications" style="font-size: 1.4em; margin-top:5px; margin-right: 10px;"></i>3 NEW E-MAILS</div>
+
+    <div class="recent-mail-container">
+
+      <a class="button inline-button" ng-repeat="mail in mails" ng-click="performaction">
+          <img src="main/assets/images/profile_placeholder.jpg">
+          <div class="email-content-preview">
+            {{mail}}
+            <b class="name">{{name}} Jacobson</b>
+          </div>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

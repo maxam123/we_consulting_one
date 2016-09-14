@@ -34,5 +34,19 @@ angular.module('main', [
             controller: 'DebugCtrl as ctrl'
           }
         }
-      });
+      })
+    .state('main.profile', {
+      url: '/profile',
+      views: {
+        'pageContent': {
+          templateUrl: 'main/templates/profile.html',
+          controller: 'ProfileCtrl as ctrl'
+        }
+      }
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'main/templates/login.html',
+      controller: 'LoginCtrl as ctrl'
+    });
 });

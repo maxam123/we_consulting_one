@@ -1,16 +1,57 @@
 <ion-view view-title="Home">
   <ion-content>
 
-    <div class="home-email-alert"><i class="icon ion-android-notifications" style="font-size: 1.4em; margin-top:5px; margin-right: 10px;"></i>3 NEW E-MAILS</div>
+    <div class="home-email-alert"><i class="icon ion-android-notifications" style="font-size: 1.4em; margin-right: 10px;"></i>{{ mails.length }} NEW E-MAILS</div>
 
     <div class="recent-mail-container">
 
-      <a class="button inline-button" ng-repeat="mail in mails" ng-click="performaction">
-          <img src="main/assets/images/profile_placeholder.jpg">
+      <a class="button inline-button" ng-repeat="mail in mails">
+          <img src="{{ mail.senderImage }}">
           <div class="email-content-preview">
-            {{mail}}
-            <b class="name">{{name}} Jacobson</b>
+            {{ mail.emailText }}
           </div>
+          <div class="email-sender-name">
+            {{ mail.senderName }}
+          </div>
+      </a>
+
+    </div>
+
+
+    <div class="highscores-container">
+
+      <div>
+        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>TOP ACTIVITY THIS MONTH</b>
+      </div>
+
+      <ul>
+        <ion-item class="row" ng-repeat="highscore in highscores">
+          <div class="col col-20">
+            <img src="{{ highscore.userImage }}" />
+          </div>
+          <div class="col col-50 score-name">
+            {{ highscore.userName }}
+          </div>
+          <div class="col col-30 score-text">
+            {{ highscore.userScore }} <small>Pts.</small>
+          </div>
+        </ion-item>
+      </ul>
+
+    </div>
+
+
+    <div class="home-calendar-alert"><i class="icon ion-ios-timer-outline" style="font-size: 1.4em; margin-right: 10px;"></i>{{ upcomingEvents.length }} UPCOMING EVENTS</div>
+
+    <div class="calendar-events-container">
+
+      <a class="button inline-button" ng-repeat="upcomingEvent in upcomingEvents" ng-click="performaction">
+        <div class="calendar-event-time">
+          {{ upcomingEvent.eventTime }}
+        </div>
+        <div class="calendar-event-description">
+          {{ upcomingEvent.eventText }}
+        </div>
       </a>
 
     </div>

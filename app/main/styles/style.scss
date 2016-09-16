@@ -12,7 +12,7 @@
   a {
     margin: 10px;
     padding: 0px 10px 0px 0px;
-    max-width: 420px;
+    width: 420px;
     background-color: white;
     border-radius: 0px;
 
@@ -24,29 +24,118 @@
     }
 
     .email-content-preview {
-      min-width:280px;
+      min-width: 320px;
       max-width:320px;
       white-space: normal;
       word-wrap: break-word;
       line-height: 20px;
       text-align: left;
-      padding: 10px 0px 10px 0px;
+      padding: 10px 26px 10px 0px;
       margin: 0px;
+      height: 70px;
+      display: inline-block;
+      overflow-y: hidden;
+    }
 
-      .name {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin-left:110px;
-      }
-
+    .email-sender-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-left:110px;
+      text-align: left;
+      font-weight: bold;
     }
 
   }
+}
+
+.calendar-events-container {
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 68px 20px 36px 20px;
+  background: #008caa;
+  background: -moz-linear-gradient(45deg, #008caa 0%, #008caa 50%, #009cbd 50%, #009cbd 100%);
+  background: -webkit-linear-gradient(45deg, #008caa 0%,#008caa 50%,#009cbd 50%,#009cbd 100%);
+  background: linear-gradient(45deg, #008caa 0%,#008caa 50%,#009cbd 50%,#009cbd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43b00', endColorstr='#de4300',GradientType=1 );
+
+  a {
+    margin: 10px;;
+    min-width: 80px;
+    max-width: 160px;
+    background-color: white;
+    border-radius: 0px;
+    text-align: center;
+
+    .calendar-event-time {
+      color: darkgray;
+      font-weight:bold;
+      padding: 10px 0px 10px 0px;
+      margin: 0px;
+    }
+
+    .calendar-event-description {
+      white-space: normal;
+      word-wrap: break-word;
+      line-height: 20px;
+      padding: 5px 10px 10px 10px;
+    }
+  }
+}
+
+.highscores-container {
+  padding: 20px;
+  background-color: #333333;
+
+  ul {
+    background-color: white;
+    margin-top: 16px;
+    padding: 0px 12px 0px 12px;
+  }
+
+  ion-item {
+    display: table;
+    height: 60px;
+    padding-left: 0px;
+    border-left: none;
+    border-right: none;
+
+    .col {
+      padding: 0px;
+    }
+
+    img {
+      height: 50px;
+      margin: 10px 10px 10px 0px;
+    }
+
+    .score-name {
+      padding-left: 20px;
+      height: 60px;
+      display: table-cell;
+      vertical-align: middle;
+      font-weight: bolder;
+    }
+
+    .score-text {
+      font-size: 1.6em;
+      color: darkgrey;
+      font-weight: bold;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+    }
+  }
+
+  ion-item:last-child {
+    padding-bottom: 0px;
+  }
+
 
 }
 
-.home-email-alert {
+.home-email-alert, .home-calendar-alert {
   position: fixed;
   width: 100%;
   text-align: center;

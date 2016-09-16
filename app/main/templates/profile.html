@@ -1,16 +1,18 @@
 <ion-view view-title="Profile">
   <!-- do you want padding? -->
   <ion-content class="padding">
-    <div class="row">
-      <div id="profileImageCol"></div>
-    </div>
-    <div class="row profileCenterText">
-      <div class="col col-50 col-offset-25"><h4>Max Alenius</h4><h5>Sundsvall</h5></div>
-    </div>
-    <div class="row profileIcons profileCenterText">
-      <div class="col col-33"><i class="icon ion-email placeholder-icon"></i></div>
-      <div class="col col-33"><i class="icon ion-ios-telephone placeholder-icon"></i></div>
-      <div class="col col-33"><i class="icon ion-ios-videocam placeholder-icon"></i></div>
+    <div class="profileEnergizedBackground">
+      <div class="row">
+        <div id="profileImageCol"></div>
+      </div>
+      <div class="row profileCenterText">
+        <div class="col col-50 col-offset-25"><h4>Max Alenius</h4><h5>Sundsvall</h5></div>
+      </div>
+      <div class="row profileIcons profileCenterText">
+        <div class="col col-33" style="border-right: 1px solid black;"><i class="icon ion-email" ng-click="showAlert('email')"></i></div>
+        <div class="col col-33" style="border-right: 1px solid black;"><i class="icon ion-ios-telephone " ng-click="showAlert('phone')"></i></div>
+        <div class="col col-33"><i class="icon ion-ios-videocam " ng-click="showAlert('video')"></i></div>
+      </div>
     </div>
     <div class="row">
       <div class="col col-25"><h4>About</h4></div>
@@ -24,19 +26,19 @@
     <div class="row">
       <div class="col col-50">
         <h5 class="profileCenterText">Score</h5>
-        <div class="circle">123pts</div>
+        <div class="circle colorGold">123p</div>
       </div>
       <div class="col col-50 profileCenterText">
-        <h5>Achievement</h5>
+        <h5>Achievements</h5>
         <div class="row">
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-nutrition"></i></div></div>
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-rose"></i></div></div>
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-game-controller-b"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorBronze"><i class="ion-ios-nutrition"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorGold"><i class="ion-ios-rose"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorDiamond"><i class="ion-ios-game-controller-b"></i></div></div>
         </div>
         <div class="row">
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-americanfootball"></i></div></div>
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-people"></i></div></div>
-          <div class="col col-33"><div class="circleSmall"><i class="ion-ios-wineglass"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorGold"><i class="ion-ios-americanfootball"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorBronze"><i class="ion-ios-people"></i></div></div>
+          <div class="col col-33"><div class="circleSmall colorSilver"><i class="ion-ios-wineglass"></i></div></div>
         </div>
       </div>
 

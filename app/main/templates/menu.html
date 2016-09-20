@@ -48,35 +48,67 @@
             </div>
           </div>
         </div>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.home">
-          <i class="icon ion-ios-home"></i>
-          Home
+        <ion-item class="item-icon-left item-icon-right">
+            <i class="icon ion-search"></i>
+            <input type="search" placeholder="Search profile, file, mail" ng-model="menu.search" ng-change="onSearchChange()">
+            <i id="discardSearch" ng-click="discardSearch()" class="icon ion-close-circled"></i>
         </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.home">
-          <i class="icon ion-ios-calendar"></i>
-          Calendar
-        </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.home">
-          <i class="icon ion-ios-email"></i>
-          Email
-        </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.home">
-          <i class="icon ion-folder"></i>
-          My files
-        </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.home">
-          <i class="icon ion-trophy"></i>
-          Highscore
-        </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="main.profile">
-          <i class="icon ion-person"></i>
-          Profile
-        </ion-item>
-        <ion-item class="item-icon-left" menu-close ui-sref="login">
-          <i class="icon ion-unlocked"></i>
-          Login
-        </ion-item>
+
+        <div id="sideMenuContent" ng-show="showContent">
+          <ion-item class="item-icon-left item-icon-right" ng-show="menu.lastSearch" ng-click="clickLastSearch">
+            Last search: {{menu.lastSearch}}
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.home">
+            <i class="icon ion-ios-home"></i>
+            Home
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.home">
+            <i class="icon ion-ios-calendar"></i>
+            Calendar
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.home">
+            <i class="icon ion-ios-email"></i>
+            Email
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.home">
+            <i class="icon ion-folder"></i>
+            My files
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.home">
+            <i class="icon ion-trophy"></i>
+            Highscore
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="main.profile">
+            <i class="icon ion-person"></i>
+            Profile
+          </ion-item>
+          <ion-item class="item-icon-left" menu-close ui-sref="login">
+            <i class="icon ion-unlocked"></i>
+            Logout
+          </ion-item>
+        </div>
       </ion-list>
+      <div id="sideMenuSearchResult" ng-show="showResult">
+        <ion-list>
+          <ion-item>
+            <div id="searchTerm">
+              Searching for: {{menu.search}}
+            </div>
+          </ion-item>
+          <h6>Profile results: </h6>
+          <ion-item>
+              Profiles containing: {{menu.search}}
+          </ion-item>
+          <h6>File results: </h6>
+          <ion-item>
+              Files containing: {{menu.search}}
+          </ion-item>
+          <h6>Mail results: </h6>
+          <ion-item>
+              Mails containing: {{menu.search}}
+          </ion-item>
+        </ion-list>
+      </div>
     </ion-content>
 
   </ion-side-menu>

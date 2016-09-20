@@ -18,22 +18,21 @@
     </div>
 
 
-    <div class="highscores-container">
+    <div class="news-container">
 
       <div>
-        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>TOP ACTIVITY THIS MONTH</b>
+        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>RECENT NEWS</b>
       </div>
 
       <ul>
-        <ion-item class="row" ng-repeat="highscore in highscores">
-          <div class="col col-20">
-            <img src="{{ highscore.userImage }}" />
-          </div>
-          <div class="col col-50 score-name">
-            {{ highscore.userName }}
-          </div>
-          <div class="col col-30 score-text">
-            {{ highscore.userScore }} <small>Pts.</small>
+        <ion-item class="row" ng-repeat="newsItem in recentNews">
+          <div>
+            <img src="{{ newsItem.image }}" style="float: left" />
+            <small style="float: right; font-size: .8em; font-style: italic">({{ newsItem.date }})</small>
+            <h2 style="margin-top: 8px;">{{ newsItem.title }}</h2>
+            <p class="news-content">{{ newsItem.content }}</p>
+            By <span style="font-style: italic">{{ newsItem.author }}</span>
+            <b style="float:right; margin-bottom: 8px">Read more..</b>
           </div>
         </ion-item>
       </ul>
@@ -53,6 +52,28 @@
           {{ upcomingEvent.eventText }}
         </div>
       </a>
+
+    </div>
+
+    <div class="highscores-container">
+
+      <div>
+        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>TOP ACTIVITY THIS MONTH</b>
+      </div>
+
+      <ul>
+        <ion-item class="row" ng-repeat="highscore in highscores">
+          <div class="col col-20">
+            <img src="{{ highscore.userImage }}" />
+          </div>
+          <div class="col col-50 score-name">
+            {{ highscore.userName }}
+          </div>
+          <div class="col col-30 score-text">
+            {{ highscore.userScore }} <small>Pts.</small>
+          </div>
+        </ion-item>
+      </ul>
 
     </div>
 

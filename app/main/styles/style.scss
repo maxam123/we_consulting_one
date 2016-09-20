@@ -84,6 +84,50 @@
   }
 }
 
+.news-container {
+
+  padding: 20px;
+  background-color: #333333;
+
+  ul {
+    background-color: white;
+    margin-top: 16px;
+    padding: 0px 12px 0px 12px;
+  }
+
+  ion-item {
+    display: table;
+    height: 60px;
+    padding-left: 0px;
+    border-left: none;
+    border-right: none;
+
+    .col {
+      padding: 0px;
+    }
+
+    img {
+      height: 50px;
+      margin: 4px 10px 10px 0px;
+    }
+
+    .news-content {
+      white-space: normal;
+      word-wrap: break-word;
+      max-height: 100px;
+    }
+  }
+
+  ion-item:active {
+    background-color: lightgrey;
+  }
+
+  ion-item:last-child {
+    padding-bottom: 0px;
+  }
+
+}
+
 .highscores-container {
   padding: 20px;
   background-color: #333333;

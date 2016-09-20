@@ -1,13 +1,17 @@
-.recent-mail-container {
-  overflow: hidden;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 68px 20px 36px 20px;
+@mixin backgroundGradient {
   background: #c43b00;
   background: -moz-linear-gradient(45deg, #c43b00 0%, #c43b00 50%, #de4300 50%, #de4300 100%);
   background: -webkit-linear-gradient(45deg, #c43b00 0%,#c43b00 50%,#de4300 50%,#de4300 100%);
   background: linear-gradient(45deg, #c43b00 0%,#c43b00 50%,#de4300 50%,#de4300 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43b00', endColorstr='#de4300',GradientType=1 );
+}
+
+.recent-mail-container {
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 68px 20px 36px 20px;
+  @include backgroundGradient;
 
   a {
     margin: 10px;
@@ -175,8 +179,6 @@
   ion-item:last-child {
     padding-bottom: 0px;
   }
-
-
 }
 
 .home-email-alert, .home-calendar-alert {
@@ -201,12 +203,7 @@
 }
 .profileEnergizedBackground{
   margin:-10px;
-
-  background: #de4300; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left,rgba(#de4300,0.85),rgba(#C73C00,1)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(right,rgba(#de4300,0.85),rgba(#C73C00,1)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(right,rgba(#de4300,0.85),rgba(#C73C00,1)); /*Fx 3.6-15*/
-  background: linear-gradient(to right, rgba(#de4300,0.85), rgba(#C73C00,1)); /*Standard*/
+  @include backgroundGradient;
 }
 .profileCenterText{
   text-align: center;
@@ -253,6 +250,38 @@
 .colorDiamond{
   background-color: #14d3ff;
 }
+.sideMenuColor{
+  padding-top:0px;
+  .item-content{
+    color:black;
+  }
+}
+.sideMenuProfile{
+  width:100%;
+  height:150px;
+  @include backgroundGradient;
+  #sideMenuProfileImage{
+    background: url('../assets/images/profile_image.jpg');
+    border: solid 1px black;
+    border-radius: 5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height:100px;
+    width:100px;
+    margin: auto;
+  }
+  #sideMenuProfileAchievement{
+
+  }
+  #sideMenuProfileName{
+    h4{
+      text-align:center;
+      width:130px;
+      margin:auto;
+    }
+  }
+}
 @media(max-width:1023px){
   #login {
     background:url('../assets/images/background.jpg') no-repeat center center fixed;
@@ -279,5 +308,34 @@
     .button-light{
       float:right;
     }
+  }
+}
+
+.shine-me {
+
+  -webkit-animation-name: ShineAnimation;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+}
+
+@-webkit-keyframes ShineAnimation{
+  from {
+    background-repeat:no-repeat;
+    background-image:-webkit-linear-gradient(
+        top left,
+        rgba(255, 255, 255, 0.0) 0%,
+        rgba(255, 255, 255, 0.0) 45%,
+        rgba(255, 255, 255, 0.5) 48%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.5) 52%,
+        rgba(255, 255, 255, 0.0) 57%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+    background-position:-150px;
+  }
+  to {
+    background-repeat:no-repeat;
+    background-position:270px;
   }
 }

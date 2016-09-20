@@ -268,7 +268,6 @@
 }
 
 .shine-me {
-  width:100%; /*Make sure the animation is over the whole element*/
 
   -webkit-animation-name: ShineAnimation;
   -webkit-animation-duration: 2s;
@@ -293,6 +292,6 @@
   }
   to {
     background-repeat:no-repeat;
-    background-position:250px;
+    background-position:270px;
   }
 }

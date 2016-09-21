@@ -191,7 +191,7 @@
 }
 
 #profileImageCol{
-  background: url('../assets/images/profile_image.jpg');
+  background: url('../assets/images/profile_placeholder_5.jpg');
   border: solid 1px black;
   border-radius: 5%;
   -webkit-background-size: cover;
@@ -261,7 +261,7 @@
   height:150px;
   @include backgroundGradient;
   #sideMenuProfileImage{
-    background: url('../assets/images/profile_image.jpg');
+    background: url('../assets/images/profile_placeholder_5.jpg');
     border: solid 1px black;
     border-radius: 5%;
     -webkit-background-size: cover;
@@ -277,7 +277,6 @@
   #sideMenuProfileName{
     h4{
       text-align:center;
-      width:130px;
       margin:auto;
     }
   }

@@ -13,7 +13,7 @@ angular.module('main')
     $scope.mails = [
       {
         senderImage: 'main/assets/images/profile_placeholder.jpg',
-        senderName: 'Max Alenius',
+        senderName: 'Liam Nilsson',
         emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead'
       },
       {

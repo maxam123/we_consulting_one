@@ -4,9 +4,6 @@
 'use strict';
 angular.module('main')
   .controller('HomeCtrl', function ($log, $scope, $ionicSideMenuDelegate) {
-
-    $log.log('Hello from your Controller: HomeCtrl in module main:. This is your controller:', this);
-
     // disable sliding in the sidemenu on this view
     $ionicSideMenuDelegate.canDragContent(false);
 

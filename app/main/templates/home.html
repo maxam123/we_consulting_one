@@ -3,9 +3,9 @@
 
     <div class="home-email-alert"><i class="icon ion-android-notifications" style="font-size: 1.4em; margin-right: 10px;"></i>{{ mails.length }} NEW E-MAILS</div>
 
-    <div class="recent-mail-container">
+    <div id="mailScroll" class="recent-mail-container">
 
-      <a class="button inline-button" ng-repeat="mail in mails">
+      <a class="button inline-button"  ng-repeat="mail in mails">
           <img src="{{ mail.senderImage }}">
           <div class="email-content-preview">
             {{ mail.emailText }}

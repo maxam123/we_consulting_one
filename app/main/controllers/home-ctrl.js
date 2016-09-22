@@ -3,23 +3,50 @@
  */
 'use strict';
 angular.module('main')
-  .controller('HomeCtrl', function ($log, $scope, $ionicSideMenuDelegate) {
+  .controller('HomeCtrl', function ($log, $scope, $ionicSideMenuDelegate, $ionicSlideBoxDelegate) {
     // disable sliding in the sidemenu on this view
     $ionicSideMenuDelegate.canDragContent(false);
-
+    $scope.showNews = true;
+    $scope.showHighscore = true;
     $scope.mails = [
       {
         senderImage: 'main/assets/images/profile_placeholder.jpg',
-        senderName: 'Liam Nilsson',
-        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead'
+        senderName: 'Sidney Crosby',
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
       },
       {
+        senderImage: 'main/assets/images/profile_placeholder.jpg',
+        senderName: 'Sidney Crosby',
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
+      },
+      {
+        senderImage: 'main/assets/images/profile_placeholder.jpg',
+        senderName: 'Sidney Crosby',
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
+      },
+      {
+        senderImage: 'main/assets/images/profile_placeholder.jpg',
+        senderName: 'Peter Forsberg',
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'      },
+      {
         senderImage: 'main/assets/images/profile_placeholder_3.jpg',
-        senderName: 'Daniel Peterson',
-        emailText: 'Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
-      }
+        senderName: 'Mats Sundin',
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'      }
     ];
-
+    $scope.toggleNews = function() {
+      if($scope.showNews==false){
+        $scope.showNews = true;
+      }else{
+        $scope.showNews = false;
+      }
+    };
+    $scope.toggleHighscore = function() {
+      if($scope.showHighscore==false){
+        $scope.showHighscore = true;
+      }else{
+        $scope.showHighscore = false;
+      }
+    };
     $scope.recentNews = [
       {
         date: '19/09/2016',

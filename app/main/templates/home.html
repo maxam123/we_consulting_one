@@ -1,49 +1,46 @@
 <ion-view view-title="Hi, Matthias!">
   <ion-content>
-
-    <div class="home-email-alert"><i class="icon ion-android-notifications" style="font-size: 1.4em; margin-right: 10px;"></i>{{ mails.length }} NEW E-MAILS</div>
-
-    <div id="mailScroll" class="recent-mail-container">
-
-      <a class="button inline-button"  ng-repeat="mail in mails">
-          <img src="{{ mail.senderImage }}">
-          <div class="email-content-preview">
-            {{ mail.emailText }}
-          </div>
-          <div class="email-sender-name">
-            {{ mail.senderName }}
-          </div>
-      </a>
-
-    </div>
-
-
-    <div class="news-container">
-
-      <div>
-        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>RECENT NEWS</b>
+    <div class="recent-mail-container">
+      <div class="homeNotification homeCenter">
+        <h5> <i class="icon ion-email-unread"></i> You have {{mails.length}} new emails</h5>
       </div>
-
-      <ul>
-        <ion-item class="row" ng-repeat="newsItem in recentNews">
-          <div>
-            <img src="{{ newsItem.image }}" style="float: left" />
-            <small style="float: right; font-size: .8em; font-style: italic">({{ newsItem.date }})</small>
-            <h2 style="margin-top: 8px;">{{ newsItem.title }}</h2>
-            <p class="news-content">{{ newsItem.content }}</p>
-            By <span style="font-style: italic">{{ newsItem.author }}</span>
-            <b style="float:right; margin-bottom: 8px">Read more..</b>
+      <ion-slide-box does-continue="true"  auto-play="true" slide-interval="8000" on-slide-changed="updateSlideIndex($index)">
+        <ion-slide ng-repeat="mail in mails">
+          <div class="row">
+            <div class="col col-25 recentMailImage">
+              <img src="{{ mail.senderImage }}">
+            </div>
+            <div class="col col-75 recentMailContent">
+              <p>
+                {{ mail.emailText }}
+              </p>
+              <div class="recentMailSenderInformation">
+                {{ mail.senderName }}
+              </div>
+            </div>
           </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div class="news-container">
+      <div class="homeNotification">
+        <h5> <i ng-class="showNews ? 'ion-chevron-up' : 'ion-chevron-down'" ng-click="toggleNews()"></i> Recent News</h5>
+      </div>
+      <ul ng-show="showNews">
+        <ion-item class="row" ng-repeat="newsItem in recentNews">
+          <img src="{{ newsItem.image }}" style="float: left" />
+          <small style="float: right; font-size: .8em; font-style: italic">({{ newsItem.date }})</small>
+          <h2 style="margin-top: 8px;">{{ newsItem.title }}</h2>
+          <p class="news-content">{{ newsItem.content }}</p>
+          By <span style="font-style: italic">{{ newsItem.author }}</span>
+          <b style="float:right; margin-bottom: 8px">Read more..</b>
         </ion-item>
       </ul>
-
     </div>
-
-
-    <div class="home-calendar-alert"><i class="icon ion-ios-timer-outline" style="font-size: 1.4em; margin-right: 10px;"></i>{{ upcomingEvents.length }} UPCOMING EVENTS</div>
-
     <div class="calendar-events-container">
-
+      <div class="homeNotification homeCenter">
+        <h5> <i class="icon ion-ios-timer-outline"></i> You have {{ upcomingEvents.length}} upcoming events</h5>
+      </div>
       <a class="button inline-button" ng-repeat="upcomingEvent in upcomingEvents" ng-click="performaction">
         <div class="calendar-event-time">
           {{ upcomingEvent.eventTime }}
@@ -56,12 +53,11 @@
     </div>
 
     <div class="highscores-container">
-
-      <div>
-        <b style="color: white; margin-bottom: 10px;"><i class="icon ion-arrow-down-b" style="font-size: 1.4em; margin-right: 10px;"></i>TOP ACTIVITY THIS MONTH</b>
+      <div class="homeNotification">
+        <h5> <i ng-class="showHighscore ? 'ion-chevron-up' : 'ion-chevron-down'" ng-click="toggleHighscore()"></i> Top activity this month</h5>
       </div>
 
-      <ul>
+      <ul  ng-show="showHighscore">
         <ion-item class="row" ng-repeat="highscore in highscores">
           <div class="col col-20">
             <img src="{{ highscore.userImage }}" />

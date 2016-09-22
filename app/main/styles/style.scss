@@ -5,59 +5,65 @@
   background: linear-gradient(45deg, #c43b00 0%,#c43b00 50%,#de4300 50%,#de4300 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c43b00', endColorstr='#de4300',GradientType=1 );
 }
-
+.homeNotification{
+  h5{
+    text-transform: uppercase;
+    font-weight:bold;
+    color:white;
+    i{
+      font-size:18px;
+    }
+  }
+}
+.homeCenter{
+  text-align:center;
+}
 .recent-mail-container {
-  overflow: hidden;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 68px 20px 36px 20px;
+  padding: 10px 20px 20px 20px;
   @include backgroundGradient;
+  .slider{
+    width:100%;
+    height:130px;
+    .slider-slide{
+      .row{
+        background-color: white;
+      }
+      .recentMailImage{
+        width:110px;
+        height:100px;
+        img{
+          float:left;
+          width:100%;
+          height:100%;
+        }
+      }
+      .recentMailContent{
 
-  a {
-    margin: 10px;
-    padding: 0px 10px 0px 0px;
-    width: 420px;
-    background-color: white;
-    border-radius: 0px;
-    /* Starting position */
-    -moz-transform:translateX(100%);
-    -webkit-transform:translateX(100%);
-    transform:translateX(100%);
-    /* Apply animation to this element */
-    -moz-animation: scroll-left 15s linear infinite;
-    -webkit-animation: scroll-left 15s linear infinite;
-    animation: scroll-left 15s linear infinite;
+        height:100px;
+        width:100%;
 
-    img {
-      float: left;
-      width: 100px;
-      height: 100px;
-      margin-right: 10px;
+        p{
+          font-size:11px;
+          height:80%;
+          overflow:hidden;
+        }
+        .recentMailSenderInformation{
+          border-top: 1px solid lightgrey;
+          height:20%;
+          width:100%;
+          overflow:hidden;
+          margin-top:-10px;
+          font-weight:bold;
+        }
+        padding: 0px 10px 0px 10px;
+      }
     }
-
-    .email-content-preview {
-      min-width: 320px;
-      max-width:320px;
-      white-space: normal;
-      word-wrap: break-word;
-      line-height: 20px;
-      text-align: left;
-      padding: 10px 26px 10px 0px;
-      margin: 0px;
-      height: 70px;
-      display: inline-block;
-      overflow-y: hidden;
+    .slider-pager{
+      top:115px;
     }
-
-    .email-sender-name {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      margin-left:110px;
-      text-align: left;
-      font-weight: bold;
+    .slider-pager-page, .slider-pager-page.active{
+      color: white;
     }
-
   }
 }
 
@@ -94,27 +100,7 @@
     }
   }
 }
-/* Move it (define the animation) */
-@-moz-keyframes scroll-left {
-  0%   { -moz-transform: translateX(100%); }
-  100% { -moz-transform: translateX(-100%); }
-}
-@-webkit-keyframes scroll-left {
-  0%   { -webkit-transform: translateX(100%); }
-  100% { -webkit-transform: translateX(-100%); }
-}
-@keyframes scroll-left {
-  0%   {
-    -moz-transform: translateX(100%); /* Browser bug fix */
-    -webkit-transform: translateX(100%); /* Browser bug fix */
-    transform: translateX(100%);
-  }
-  100% {
-    -moz-transform: translateX(-100%); /* Browser bug fix */
-    -webkit-transform: translateX(-100%); /* Browser bug fix */
-    transform: translateX(-100%);
-  }
-}
+
 .news-container {
 
   padding: 20px;
@@ -206,15 +192,6 @@
   ion-item:last-child {
     padding-bottom: 0px;
   }
-}
-
-.home-email-alert, .home-calendar-alert {
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  margin-top: 20px;
 }
 
 #profileImageCol{

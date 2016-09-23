@@ -1,23 +1,35 @@
 'use strict';
 angular.module('main')
-.controller('LoginCtrl', function ($log, $scope, AadClient, $state) {
+.controller('LoginCtrl', function ($log, $scope, AadClient, $state, $http) {
 
   $log.log('Hello from your Controller: LoginCtrl in module main:. This is your controller:', this);
 
-  $scope.logMeIn = function () {
+  $scope.authorization = '';
+
+  $scope.logInWithMicrosoft = function () {
 
     AadClient.authenticate().then(function (token) {
-      $log.log('Should be logged in now! Redirecting to homepage');
-      $state.go('main.home');
+      $scope.authorization = 'Bearer ' + token.accessToken;
+
+      $log.log('Should be logged in now! Authorization: ' + JSON.stringify($scope.authorization) );
+      //$state.go('main.home');
     }, $scope.errorHandler);
 
   };
 
-  $scope.logUsersInConsole = function () {
-    AadClient.getUsers().then(function (users) {
-      $log.log(users);
-    })
-  }
+  $scope.testGraphRequest = function(){
+
+    $http({
+      method: 'GET',
+      url: 'https://graph.microsoft.com/v1.0/me',
+      headers: {
+        'Authorization': $scope.authorization
+      }
+    }).then(function (me) {
+      $log.log(me);
+    });
+
+  };
 
 
 

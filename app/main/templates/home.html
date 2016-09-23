@@ -4,7 +4,7 @@
       <div class="homeNotification homeCenter">
         <h5> <i class="icon ion-email-unread"></i> You have {{mails.length}} new emails</h5>
       </div>
-      <ion-slide-box does-continue="true"  auto-play="true" slide-interval="8000" on-slide-changed="updateSlideIndex($index)">
+      <ion-slide-box does-continue="true"  auto-play="true" slide-interval="5000" on-slide-changed="updateSlideIndex($index)">
         <ion-slide ng-repeat="mail in mails">
           <div class="row">
             <div class="col col-25 recentMailImage">
@@ -23,8 +23,8 @@
       </ion-slide-box>
     </div>
     <div class="news-container">
-      <div class="homeNotification">
-        <h5> <i ng-class="showNews ? 'ion-chevron-up' : 'ion-chevron-down'" ng-click="toggleNews()"></i> Recent News</h5>
+      <div class="homeNotification" ng-click="toggleNews()">
+        <h5> <i ng-class="showNews ? 'ion-chevron-up' : 'ion-chevron-down'"></i> Recent News</h5>
       </div>
       <ul ng-show="showNews">
         <ion-item class="row" ng-repeat="newsItem in recentNews">
@@ -41,7 +41,7 @@
       <div class="homeNotification homeCenter">
         <h5> <i class="icon ion-ios-timer-outline"></i> You have {{ upcomingEvents.length}} upcoming events</h5>
       </div>
-      <a class="button inline-button" ng-repeat="upcomingEvent in upcomingEvents" ng-click="performaction">
+      <a class="button inline-button" ng-repeat="upcomingEvent in upcomingEvents">
         <div class="calendar-event-time">
           {{ upcomingEvent.eventTime }}
         </div>
@@ -53,8 +53,8 @@
     </div>
 
     <div class="highscores-container">
-      <div class="homeNotification">
-        <h5> <i ng-class="showHighscore ? 'ion-chevron-up' : 'ion-chevron-down'" ng-click="toggleHighscore()"></i> Top activity this month</h5>
+      <div class="homeNotification" ng-click="toggleHighscore()">
+        <h5> <i ng-class="showHighscore ? 'ion-chevron-up' : 'ion-chevron-down'"></i> Top activity this month</h5>
       </div>
 
       <ul  ng-show="showHighscore">

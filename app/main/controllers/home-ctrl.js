@@ -12,7 +12,7 @@ angular.module('main')
       {
         senderImage: 'main/assets/images/profile_placeholder.jpg',
         senderName: 'Sidney Crosby',
-        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
+        emailText: 'Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today.Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today.Hej! Did you see the latest .. Hej Hej, small update on the meeting we\'re having today. What do you think about doing it tomorrow instead?'
       },
       {
         senderImage: 'main/assets/images/profile_placeholder.jpg',

@@ -26,4 +26,6 @@
     </platform>
     <preference name="StatusBarBackgroundColor" value="#3d3d3d" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
+    <preference name="android-minSdkVersion" value="14" />
+    <plugin name="cordova-plugin-ms-aad-graph" spec="~0.6.0" />
 </widget>
